@@ -20,7 +20,7 @@ class PredictPipeline:
             print("Preprocessor Loaded")
             data_scaled = features# preprocessor.transform(features)
             print("Input data scaled using preprocessor")
-            preds = 66.88 #model.predict(data_scaled)
+            preds = [66.88] #model.predict(data_scaled)
             print("Model prediction done!")
             return preds
         except Exception as e:
