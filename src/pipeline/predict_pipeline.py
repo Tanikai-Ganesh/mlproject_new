@@ -13,12 +13,18 @@ class PredictPipeline:
         try:
             model_path = 'artifacts\model.pkl'
             preprocessor_path = 'artifacts\preprocessor.pkl'
+            print("Model and preprocessor path defined")
             model = load_object(file_path = model_path)
+            print("Model Loaded")
             preprocessor = load_object(file_path = preprocessor_path)
+            print("Preprocessor Loaded")
             data_scaled = preprocessor.transform(features)
+            print("Input data scaled using preprocessor")
             preds = model.predict(data_scaled)
+            print("Model prediction done!")
             return preds
         except Exception as e:
+            print(CustomException(e,sys))
             raise CustomException(e,sys)
 
 
